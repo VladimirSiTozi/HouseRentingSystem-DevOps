@@ -1,5 +1,10 @@
 pipeline {
-    agent any 
+    agent {
+        docker {
+            // Use an image with .NET installed. Adjust the version as needed.
+            image 'mcr.microsoft.com/dotnet/sdk:6.0'
+        }
+    }
     stages {
         stage('Build Project') {
             steps {
