@@ -1,18 +1,14 @@
 pipeline {
-    agent {
-        dockerContainer {
-            image 'mcr.microsoft.com/dotnet/sdk:6.0'
-        }
-    }
+    agent any 
     stages {
-        stage('Build Project') {
+        stage('Build Projetc') {
             steps {
-                sh 'dotnet build'
+                bat 'dotnet build'
             }
         }
         stage('Run dotnet tests') {
             steps {
-                sh 'dotnet test'
+                bat 'dotnet test'
             }
         }
     }
