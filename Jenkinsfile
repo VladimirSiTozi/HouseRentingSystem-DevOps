@@ -1,14 +1,14 @@
 pipeline {
-    agent { label 'windows' } // Ensure this label matches a Windows node
+    agent any 
     stages {
         stage('Build Project') {
             steps {
-                bat 'dotnet build'
+                sh 'dotnet build'
             }
         }
         stage('Run dotnet tests') {
             steps {
-                bat 'dotnet test'
+                sh 'dotnet test'
             }
         }
     }
